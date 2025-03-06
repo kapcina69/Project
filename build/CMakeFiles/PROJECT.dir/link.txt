@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/PROJECT.dir/main11.cpp.o -o PROJECT  /usr/lib/x86_64-linux-gnu/libsndfile.so 
