@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/PROJECT.dir/main11.cpp.o -o PROJECT  /usr/lib/x86_64-linux-gnu/libsndfile.so 
+/usr/bin/c++ CMakeFiles/PROJECT.dir/main11.cpp.o -o PROJECT  /usr/lib/x86_64-linux-gnu/libsndfile.so -lkfr_dsp_avx2 -lkfr_dsp_avx512 -lkfr_dsp_avx -lkfr_dsp_sse2 -lkfr_dsp_sse41 -lkfr_io 

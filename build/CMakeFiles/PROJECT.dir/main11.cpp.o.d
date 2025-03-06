@@ -153,12 +153,20 @@ CMakeFiles/PROJECT.dir/main11.cpp.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/vector \
- /usr/include/c++/13/bits/stl_uninitialized.h \
- /usr/include/c++/13/bits/stl_vector.h \
- /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/cmath \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/c++/13/bits/istream.tcc /usr/local/include/kfr/base.hpp \
+ /usr/local/include/kfr/math.hpp /usr/local/include/kfr/simd.hpp \
+ /usr/local/include/kfr/simd/abs.hpp \
+ /usr/local/include/kfr/simd/impl/abs.hpp \
+ /usr/local/include/kfr/simd/operators.hpp \
+ /usr/local/include/kfr/simd/impl/operators.hpp \
+ /usr/local/include/kfr/simd/impl/function.hpp \
+ /usr/local/include/kfr/simd/shuffle.hpp \
+ /usr/local/include/kfr/simd/constants.hpp \
+ /usr/local/include/kfr/simd/types.hpp /usr/local/include/kfr/kfr.h \
+ /usr/local/include/kfr/config.h /usr/local/include/kfr/cident.h \
+ /usr/include/assert.h /usr/local/include/kfr/simd/impl/intrinsics.h \
+ /usr/include/c++/13/math.h /usr/include/c++/13/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
@@ -179,4 +187,267 @@ CMakeFiles/PROJECT.dir/main11.cpp.o: \
  /usr/include/c++/13/tr1/modified_bessel_func.tcc \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
- /usr/include/c++/13/tr1/riemann_zeta.tcc
+ /usr/include/c++/13/tr1/riemann_zeta.tcc /usr/include/c++/13/stdlib.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/x86gprintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/ia32intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/adxintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/bmiintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/bmi2intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/cetintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/cldemoteintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/clflushoptintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/clwbintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/clzerointrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/cmpccxaddintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/enqcmdintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/fxsrintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/lzcntintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/lwpintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/movdirintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/mwaitintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/mwaitxintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/pconfigintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/popcntintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/pkuintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/prfchiintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/raointintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/rdseedintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/rtmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/serializeintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/sgxintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/tbmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/tsxldtrkintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/uintrintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/waitpkgintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/wbnoinvdintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/xsaveintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/xsavecintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/xsaveoptintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/xsavesintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/xtestintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/hresetintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/pmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/tmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/wmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avxintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avxifmaintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniint8intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx2intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512erintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512pfintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512cdintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bwintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512dqintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vlbwintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vldqintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmaintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmavlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmiintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmivlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx5124fmapsintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx5124vnniwintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmi2intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmi2vlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vnniintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vnnivlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqvlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bitalgintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectvlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fp16intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fp16vlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/shaintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/fmaintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/f16cintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/gfniintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/vaesintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/vpclmulqdqintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bf16vlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bf16intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/avxneconvertintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/amxtileintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/amxint8intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/amxbf16intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/amxcomplexintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/prfchwintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/keylockerintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/amxfp16intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/x86intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/mm3dnow.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/fma4intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/ammintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/xopintrin.h \
+ /usr/local/include/kfr/simd/impl/specialconstants.hpp \
+ /usr/local/include/kfr/cometa/numeric.hpp \
+ /usr/local/include/kfr/cometa.hpp /usr/include/c++/13/cstdint \
+ /usr/include/c++/13/cstring /usr/include/c++/13/random \
+ /usr/include/c++/13/bits/random.h /usr/include/c++/13/vector \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
+ /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
+ /usr/include/c++/13/bits/stl_numeric.h \
+ /usr/include/c++/13/pstl/glue_numeric_defs.h \
+ /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/utility \
+ /usr/include/c++/13/bits/stl_relops.h /usr/include/c++/13/climits \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /usr/local/include/kfr/simd/mask.hpp /usr/local/include/kfr/simd/vec.hpp \
+ /usr/local/include/kfr/cometa/string.hpp \
+ /usr/local/include/kfr/cometa/cstring.hpp \
+ /usr/local/include/kfr/cometa/ctti.hpp \
+ /usr/local/include/kfr/cometa/named_arg.hpp /usr/include/c++/13/array \
+ /usr/include/c++/13/compare /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_tempbuf.h \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/ext/concurrence.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/13/backward/auto_ptr.h \
+ /usr/include/c++/13/pstl/glue_memory_defs.h \
+ /usr/local/include/kfr/version.hpp \
+ /usr/local/include/kfr/runtime/cpuid_auto.hpp \
+ /usr/local/include/kfr/runtime/cpuid.hpp \
+ /usr/local/include/kfr/simd/platform.hpp \
+ /usr/local/include/kfr/simd/impl/backend.hpp \
+ /usr/local/include/kfr/simd/impl/simd.hpp \
+ /usr/local/include/kfr/simd/impl/backend_generic.hpp \
+ /usr/local/include/kfr/simd/impl/specializations.hpp \
+ /usr/local/include/kfr/simd/impl/basicoperators_generic.hpp \
+ /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+ /usr/local/include/kfr/simd/impl/basicoperators_complex.hpp \
+ /usr/local/include/kfr/simd/complex_type.hpp /usr/include/c++/13/complex \
+ /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc \
+ /usr/local/include/kfr/simd/select.hpp \
+ /usr/local/include/kfr/simd/impl/select.hpp \
+ /usr/local/include/kfr/simd/clamp.hpp \
+ /usr/local/include/kfr/simd/impl/clamp.hpp \
+ /usr/local/include/kfr/simd/min_max.hpp \
+ /usr/local/include/kfr/simd/impl/min_max.hpp \
+ /usr/local/include/kfr/simd/comparison.hpp \
+ /usr/local/include/kfr/simd/complex.hpp \
+ /usr/local/include/kfr/simd/digitreverse.hpp \
+ /usr/local/include/kfr/simd/horizontal.hpp \
+ /usr/local/include/kfr/simd/logical.hpp \
+ /usr/local/include/kfr/simd/impl/logical.hpp \
+ /usr/local/include/kfr/simd/read_write.hpp \
+ /usr/local/include/kfr/simd/impl/read_write.hpp \
+ /usr/local/include/kfr/simd/round.hpp \
+ /usr/local/include/kfr/simd/impl/round.hpp \
+ /usr/local/include/kfr/simd/saturation.hpp \
+ /usr/local/include/kfr/simd/impl/saturation.hpp \
+ /usr/local/include/kfr/simd/sort.hpp \
+ /usr/local/include/kfr/math/asin_acos.hpp \
+ /usr/local/include/kfr/math/impl/asin_acos.hpp \
+ /usr/local/include/kfr/math/atan.hpp \
+ /usr/local/include/kfr/math/impl/atan.hpp \
+ /usr/local/include/kfr/math/sin_cos.hpp \
+ /usr/local/include/kfr/math/impl/sin_cos.hpp \
+ /usr/local/include/kfr/math/sqrt.hpp \
+ /usr/local/include/kfr/math/impl/sqrt.hpp \
+ /usr/local/include/kfr/math/compiletime.hpp \
+ /usr/local/include/kfr/math/complex_math.hpp \
+ /usr/local/include/kfr/math/hyperbolic.hpp \
+ /usr/local/include/kfr/math/impl/hyperbolic.hpp \
+ /usr/local/include/kfr/math/log_exp.hpp \
+ /usr/local/include/kfr/math/impl/log_exp.hpp \
+ /usr/local/include/kfr/math/gamma.hpp \
+ /usr/local/include/kfr/math/impl/gamma.hpp \
+ /usr/local/include/kfr/math/interpolation.hpp \
+ /usr/local/include/kfr/math/modzerobessel.hpp \
+ /usr/local/include/kfr/math/impl/modzerobessel.hpp \
+ /usr/local/include/kfr/math/tan.hpp \
+ /usr/local/include/kfr/math/impl/tan.hpp \
+ /usr/local/include/kfr/base/basic_expressions.hpp \
+ /usr/local/include/kfr/base/expression.hpp \
+ /usr/local/include/kfr/base/shape.hpp /usr/local/include/kfr/except.hpp \
+ /usr/local/include/kfr/base/impl/static_array.hpp \
+ /usr/include/c++/13/bitset /usr/include/c++/13/optional \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/local/include/kfr/base/conversion.hpp \
+ /usr/local/include/kfr/base/univector.hpp \
+ /usr/local/include/kfr/cometa/array.hpp /usr/include/c++/13/iterator \
+ /usr/include/c++/13/bits/stream_iterator.h \
+ /usr/local/include/kfr/base/memory.hpp \
+ /usr/local/include/kfr/cometa/memory.hpp /usr/include/c++/13/atomic \
+ /usr/local/include/kfr/base/endianness.hpp \
+ /usr/local/include/kfr/base/filter.hpp \
+ /usr/local/include/kfr/base/handle.hpp \
+ /usr/local/include/kfr/base/fraction.hpp \
+ /usr/local/include/kfr/base/generators.hpp \
+ /usr/local/include/kfr/base/math_expressions.hpp \
+ /usr/local/include/kfr/base/random.hpp \
+ /usr/local/include/kfr/base/random_bits.hpp \
+ /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
+ /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/bits/node_handle.h \
+ /usr/include/c++/13/bits/erase_if.h \
+ /usr/local/include/kfr/base/state_holder.hpp \
+ /usr/local/include/kfr/base/reduce.hpp \
+ /usr/local/include/kfr/base/simd_expressions.hpp \
+ /usr/local/include/kfr/base/small_buffer.hpp \
+ /usr/local/include/kfr/base/tensor.hpp \
+ /usr/local/include/kfr/base/transpose.hpp /usr/local/include/kfr/dsp.hpp \
+ /usr/local/include/kfr/dsp/biquad.hpp \
+ /usr/local/include/kfr/testo/assert.hpp \
+ /usr/local/include/kfr/testo/comparison.hpp \
+ /usr/local/include/kfr/cometa/tuple.hpp \
+ /usr/local/include/kfr/cometa/range.hpp \
+ /usr/local/include/kfr/dsp/biquad_design.hpp \
+ /usr/local/include/kfr/dsp/dcremove.hpp \
+ /usr/local/include/kfr/dsp/delay.hpp /usr/local/include/kfr/dsp/fir.hpp \
+ /usr/local/include/kfr/dsp/ebu.hpp \
+ /usr/local/include/kfr/dsp/speaker.hpp \
+ /usr/local/include/kfr/dsp/units.hpp \
+ /usr/local/include/kfr/dsp/fir_design.hpp \
+ /usr/local/include/kfr/dsp/goertzel.hpp \
+ /usr/local/include/kfr/dsp/iir_design.hpp \
+ /usr/local/include/kfr/dsp/mixdown.hpp \
+ /usr/local/include/kfr/dsp/oscillators.hpp \
+ /usr/local/include/kfr/dsp/sample_rate_conversion.hpp \
+ /usr/local/include/kfr/dsp/window.hpp \
+ /usr/local/include/kfr/dsp/special.hpp \
+ /usr/local/include/kfr/dsp/waveshaper.hpp \
+ /usr/local/include/kfr/dsp/weighting.hpp /usr/local/include/kfr/io.hpp \
+ /usr/local/include/kfr/io/audiofile.hpp \
+ /usr/local/include/kfr/io/file.hpp \
+ /usr/local/include/kfr/io/python_plot.hpp /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/local/include/kfr/io/tostring.hpp

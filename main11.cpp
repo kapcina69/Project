@@ -1,14 +1,29 @@
 #include <sndfile.h>
 #include <iostream>
+#include <kfr/base.hpp>
+#include <kfr/dsp.hpp>
+#include <kfr/io.hpp>
 #include <vector>
 #include <cmath> // za generisanje sinusoida
+
+using namespace kfr;
+
+
 
 int main() {
     // Putanja do WAV fajla
     const char* input_filename = "../two-channels-background-song-1.wav";
     const char* left_channel_filename = "left-channel-output.wav";
     const char* right_channel_filename = "right-channel-output.wav";
-
+    // Open file as sequence of float`s, conversion is performed internally
+    audio_reader_wav<float> reader(open_file_for_reading(input_filename));
+    univector2d<float> audio = reader.read_channels();
+println("Sample Rate  = ", reader.format().samplerate);
+println("Channels     = ", reader.format().channels);
+println("Length       = ", reader.format().length);
+println("Duration (s) = ", reader.format().length / reader.format().samplerate);
+println("Bit depth    = ", audio_sample_bit_depth(reader.format().type));
+/*
     // Otvorite WAV fajl koristeći libsndfile
     SF_INFO sfinfo;
     SNDFILE* file = sf_open(input_filename, SFM_READ, &sfinfo);
@@ -64,6 +79,22 @@ int main() {
 
     std::cout << "Levi kanal sačuvan u: " << left_channel_filename << std::endl;
     std::cout << "Desni kanal sačuvan u: " << right_channel_filename << std::endl;
+*/
+
+    // Define an output univector with 1024 elements
+    univector<fbase, 1024> output;
+    // Create a 4th-order Butterworth bandpass filter with a passband from 0.005 to 0.9 (normalized frequency)
+    zpk<fbase> filt = iir_bandpass(butterworth<fbase>(4), 0.005, 0.9);
+    // Convert the filter to second-order sections (SOS).
+    // This is an expensive operation, so keep 'iir_params' if it is reused later
+    iir_params<fbase> bqs = to_sos(filt);
+
+    // Apply the filter to a unit impulse signal to get the filter's impulse response
+    //
+    //output = iir(audio, bqs);
+
+
+
 
     return 0;
 }
