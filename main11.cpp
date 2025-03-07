@@ -74,7 +74,7 @@ int main() {
     univector<float> output;
     
     {
-        zpk<fbase> filt = iir_bandpass(butterworth<fbase>(4), 30, 130);
+        zpk<fbase> filt = iir_bandpass(butterworth<fbase>(4), 30, 130,format.samplerate);
 
 
 
@@ -85,10 +85,6 @@ int main() {
         // Apply the filter to a unit impulse signal to get the filter's impulse response
         output = iir(left_channel, bqs);
     }
-
-    auto filtered_writer= std::make_shared<audio_writer_wav<float>>(open_file_for_writing(input_filename2), mono_format);
-    filtered_writer->write(output.data(),output.size());
-    filtered_writer->close();
     absmax = 0;
     for (size_t i = 0; i < output.size(); ++i)
     {
@@ -98,13 +94,17 @@ int main() {
     {
         output[i] = output[i] / absmax;
     }
+    auto filtered_writer= std::make_shared<audio_writer_wav<float>>(open_file_for_writing(input_filename2), mono_format);
+    filtered_writer->write(output.data(),output.size());
+    filtered_writer->close();
     
     
+    /*
     
     for(int i=20000;i<33000;i++){
         std::cout<<output.data()[i]<<"-----"<<left_channel.data()[i]<<std::endl;
     }
-
+*/
     
     return 0;
 }
