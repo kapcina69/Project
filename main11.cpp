@@ -7,94 +7,104 @@
 #include <cmath> // za generisanje sinusoida
 
 using namespace kfr;
-
-
-
 int main() {
     // Putanja do WAV fajla
-    const char* input_filename = "../two-channels-background-song-1.wav";
+    const char* input_filename1 = "../two-channels-background-song-1.wav";
     const char* left_channel_filename = "left-channel-output.wav";
     const char* right_channel_filename = "right-channel-output.wav";
-    // Open file as sequence of float`s, conversion is performed internally
-    audio_reader_wav<float> reader(open_file_for_reading(input_filename));
-    univector2d<float> audio = reader.read_channels();
-println("Sample Rate  = ", reader.format().samplerate);
-println("Channels     = ", reader.format().channels);
-println("Length       = ", reader.format().length);
-println("Duration (s) = ", reader.format().length / reader.format().samplerate);
-println("Bit depth    = ", audio_sample_bit_depth(reader.format().type));
-/*
-    // Otvorite WAV fajl koristeći libsndfile
-    SF_INFO sfinfo;
-    SNDFILE* file = sf_open(input_filename, SFM_READ, &sfinfo);
-    if (file == nullptr) {
-        std::cerr << "Neuspesno otvaranje WAV fajla: " << sf_strerror(file) << std::endl;
-        return 1;
+    const char* input_filename2 = "filtered-output.wav";
+
+    
+    // Otvorite WAV fajl kao sekvencu float vrednosti
+    auto reader = kfr::audio_reader_wav<float>(open_file_for_reading(input_filename1));
+    const auto& format = reader.format();
+    
+    println("Sample Rate  = ", format.samplerate);
+    println("Channels     = ", format.channels);
+    println("Length       = ", format.length);
+    println("Duration (s) = ", format.length / format.samplerate);
+    println("Bit depth    = ", audio_sample_bit_depth(format.type));
+    
+    // Učitajte audio podatke za oba kanala
+    univector2d<float> audio1 = reader.read_channels();
+
+    // Uzmite levi kanal
+    univector<float> left_channel = audio1[0];  // Levi kanal je prvi u univector2d
+
+    // Uzmite desni kanal
+    univector<float> right_channel = audio1[1];  // Desni kanal je drugi u univector2d
+
+    // Proverite da li je broj uzoraka za oba kanala jednak originalnom broju uzoraka
+    std::cout << "Levi kanal ima " << left_channel.size() << " uzoraka." << std::endl;
+    std::cout << "Desni kanal ima " << right_channel.size() << " uzoraka." << std::endl;
+
+    // Proverite da li je broj uzoraka za oba kanala isti kao originalni broj uzoraka
+    if (left_channel.size() != format.length || right_channel.size() != format.length) {
+        std::cerr << "Greška: broj uzoraka za kanale se ne poklapa sa originalnim brojem uzoraka." << std::endl;
+        return -1;
     }
 
-    // Ispisivanje informacija o fajlu
-    std::cout << "Fajl je uspešno otvoren!" << std::endl;
-    std::cout << "Broj kanala: " << sfinfo.channels << std::endl;
-    std::cout << "Broj uzoraka: " << sfinfo.frames << std::endl;
-    std::cout << "Sample rate: " << sfinfo.samplerate << std::endl;
+        // Postavite novi format sa jednim kanalom
+    audio_format_and_length mono_format = format;
+    mono_format.channels = 1;
+    mono_format.length = format.length; // Ostaviti dužinu istu kao originalni fajl
 
-    // Učitavanje podataka iz WAV fajla u vektor
-    std::vector<float> audio_data(sfinfo.frames * sfinfo.channels);
-    sf_readf_float(file, audio_data.data(), sfinfo.frames);
-
-    // Zatvori WAV fajl nakon čitanja
-    sf_close(file);
-
-    // Kreiraj dva vektora za levi i desni kanal
-    std::vector<float> left_channel(sfinfo.frames);
-    std::vector<float> right_channel(sfinfo.frames);
-
-    // Podeli audio podatke na dva kanala (pretpostavljamo stereo)
-    for (size_t i = 0; i < sfinfo.frames; ++i) {
-        left_channel[i] = audio_data[i * sfinfo.channels]; // Levi kanal je prvi uzorak svakog para
-        right_channel[i] = audio_data[i * sfinfo.channels + 1]; // Desni kanal je drugi uzorak svakog para
+    // Otvorite fajlove za pisanje
+    auto left_writer = std::make_shared<audio_writer_wav<float>>(open_file_for_writing(left_channel_filename), mono_format);
+    auto right_writer = std::make_shared<audio_writer_wav<float>>(open_file_for_writing(right_channel_filename), mono_format);
+    float absmax = 0;
+    for (size_t i = 0; i < left_channel.size(); ++i)
+    {
+        absmax = std::max(absmax, std::abs(left_channel[i]));
     }
-
-    // Spremanje levog kanala u novi WAV fajl
-    SF_INFO left_info = sfinfo;
-    left_info.channels = 1; // Samo jedan kanal za levi kanal
-    SNDFILE* left_file = sf_open(left_channel_filename, SFM_WRITE, &left_info);
-    if (left_file == nullptr) {
-        std::cerr << "Neuspesno otvaranje levog izlaznog WAV fajla: " << sf_strerror(left_file) << std::endl;
-        return 1;
+    for (size_t i = 0; i < left_channel.size(); ++i)
+    {
+        left_channel[i] = left_channel[i] / absmax;
     }
-    sf_writef_float(left_file, left_channel.data(), sfinfo.frames);
-    sf_close(left_file);
+    // Upisivanje podataka u izlazne fajlove
+    left_writer->write(left_channel.data(), left_channel.size());
+    right_writer->write(right_channel.data(), right_channel.size());
+    
 
-    // Spremanje desnog kanala u novi WAV fajl
-    SF_INFO right_info = sfinfo;
-    right_info.channels = 1; // Samo jedan kanal za desni kanal
-    SNDFILE* right_file = sf_open(right_channel_filename, SFM_WRITE, &right_info);
-    if (right_file == nullptr) {
-        std::cerr << "Neuspesno otvaranje desnog izlaznog WAV fajla: " << sf_strerror(right_file) << std::endl;
-        return 1;
-    }
-    sf_writef_float(right_file, right_channel.data(), sfinfo.frames);
-    sf_close(right_file);
-
-    std::cout << "Levi kanal sačuvan u: " << left_channel_filename << std::endl;
-    std::cout << "Desni kanal sačuvan u: " << right_channel_filename << std::endl;
-*/
+    // Zatvaranje fajlova
+    left_writer->close();
+    right_writer->close();
 
     // Define an output univector with 1024 elements
-    univector<fbase, 1024> output;
-    // Create a 4th-order Butterworth bandpass filter with a passband from 0.005 to 0.9 (normalized frequency)
-    zpk<fbase> filt = iir_bandpass(butterworth<fbase>(4), 0.005, 0.9);
-    // Convert the filter to second-order sections (SOS).
-    // This is an expensive operation, so keep 'iir_params' if it is reused later
-    iir_params<fbase> bqs = to_sos(filt);
-
-    // Apply the filter to a unit impulse signal to get the filter's impulse response
-    //
-    //output = iir(audio, bqs);
+    univector<float> output;
+    
+    {
+        zpk<fbase> filt = iir_bandpass(butterworth<fbase>(4), 30, 130);
 
 
 
+        // Convert the filter to second-order sections (SOS).
+        // This is an expensive operation, so keep 'iir_params' if it is reused later
+        iir_params<fbase> bqs = to_sos(filt);
 
+        // Apply the filter to a unit impulse signal to get the filter's impulse response
+        output = iir(left_channel, bqs);
+    }
+
+    auto filtered_writer= std::make_shared<audio_writer_wav<float>>(open_file_for_writing(input_filename2), mono_format);
+    filtered_writer->write(output.data(),output.size());
+    filtered_writer->close();
+    absmax = 0;
+    for (size_t i = 0; i < output.size(); ++i)
+    {
+        absmax = std::max(absmax, std::abs(output[i]));
+    }
+    for (size_t i = 0; i < output.size(); ++i)
+    {
+        output[i] = output[i] / absmax;
+    }
+    
+    
+    
+    for(int i=20000;i<33000;i++){
+        std::cout<<output.data()[i]<<"-----"<<left_channel.data()[i]<<std::endl;
+    }
+
+    
     return 0;
 }
